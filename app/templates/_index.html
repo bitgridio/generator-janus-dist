@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%= description %>
+    <FireBoxRoom>
+      <Assets>
+        <% _.forEach(assetImages, function (image) {
+          %><AssetImage id="<%= image.id %>" src="<%= imageDirLoc + '/' + image.src %>" />
+        <% }); %>
+      </Assets>
+      <Room use_local_asset="room_plane">
+        <% _.forEach(assetImages, function (image) {
+          %><Image id="<%= image.id %>" pos="<%= image.pos %>" xdir="<%= image.xdir %>" ydir="<%= image.ydir %>" zdir="<%= image.zdir %>" scale="1 1 1" />
+        <% }); %>
+      </Room>
+    </FireBoxRoom>
+  </body>
+</html>
