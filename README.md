@@ -1,6 +1,6 @@
-# generator-janus-dist [![Build Status](https://secure.travis-ci.org/sirkitree/generator-janus-dist.png?branch=master)](https://travis-ci.org/sirkitree/generator-janus-dist)
+# generator-janus-dist 
 
-> [Yeoman](http://yeoman.io) generator
+> [Yeoman](http://yeoman.io) generator for distributing assets in [Janus VR](http://janusvr.com)
 
 
 ## Getting Started
