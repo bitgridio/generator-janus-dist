@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator for distributing assets in [Janus VR](http://janusvr.com).
 
-**Note**: not ready yet. Simply generates markup for image in a directory. Positional calculations are not yet in place. See [#1](issues/1).
+**Note**: not ready yet. Simply generates markup for image in a directory. Positional calculations are not yet in place. See [#1](https://github.com/sirkitree/generator-janus-dist/issues/1).
 
 
 ## Getting Started
