@@ -12,7 +12,7 @@
       </Assets>
       <Room use_local_asset="room_plane">
         <% _.forEach(assetImages, function (image) {
-          %><Image id="<%= image.id %>" pos="<%= image.pos %>" xdir="<%= image.xdir %>" ydir="<%= image.ydir %>" zdir="<%= image.zdir %>" scale="1 1 1" />
+          %><Image id="<%= image.id %>" pos="<%= image.pos.x %> <%= image.pos.y %> <%= image.pos.z %>" xdir="<%= image.xdir %>" ydir="<%= image.ydir %>" zdir="<%= image.zdir %>" scale="1 1 1" />
         <% }); %>
       </Room>
     </FireBoxRoom>

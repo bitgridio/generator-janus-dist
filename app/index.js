@@ -37,17 +37,40 @@ module.exports = yeoman.generators.Base.extend({
 
       // get the files in the directory
       this.imageDirLoc = props.imageDirLoc;
+
+        var c = 5,
+          x = c * (-1),
+          y = 1;
+
       this.assetImages = [];
+
+      // pass this.assetImages as the context which becomes 'this' inside the forEach();
       fs.readdirSync(props.imageDirLoc).forEach(function (val, idx, arr) {
+
+        if (idx !== 0) {
+          // not the first one
+          x++;
+        }
+
         this.push({
           'id': _.slugify(val),
           'src': val,
-          'pos': 'pos', // todo: calc pos, x y z dir
+          'pos': {'x' : x, 'y' : y, 'z' : 0},
           'xdir': 'xdir',
           'ydir': 'ydir',
           'zdir': 'zdir'
         });
+
+        // if we're at our contraint
+        if (x === c) {
+          // reset x to -c+1 because x is incremented above
+          x = (c + 1) * (-1);
+          // increment y
+          y++;
+        }
+
       }, this.assetImages);
+
 
       done();
     }.bind(this));
