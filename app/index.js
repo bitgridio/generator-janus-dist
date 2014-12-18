@@ -37,8 +37,8 @@ module.exports = yeoman.generators.Base.extend({
 
       // get the files in the directory
       this.imageDirLoc = props.imageDirLoc;
-      var assetImages = [];
-      this.assetImages = fs.readdirSync(props.imageDirLoc).forEach(function (val, idx, arr) {
+      this.assetImages = [];
+      fs.readdirSync(props.imageDirLoc).forEach(function (val, idx, arr) {
         this.push({
           'id': _.slugify(val),
           'src': val,
@@ -47,8 +47,7 @@ module.exports = yeoman.generators.Base.extend({
           'ydir': 'ydir',
           'zdir': 'zdir'
         });
-      }, assetImages);
-      this.assetImages = assetImages;
+      }, this.assetImages);
 
       done();
     }.bind(this));
