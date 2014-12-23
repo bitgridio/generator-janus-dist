@@ -2,11 +2,6 @@
 
 > [Yeoman](http://yeoman.io) generator for distributing assets in [Janus VR](http://janusvr.com).
 
-**Note**: not ready yet. Simply generates markup for image in a directory. Positional calculations are not yet in place. See [#1](https://github.com/sirkitree/generator-janus-dist/issues/1).
-
-Also this has not been submitted to npm yet, so the below boilerplate instructions will not work. You'll want to do a git checkout and then npm link from within the checkout to try this out locally for now.
-
-
 ## Getting Started
 
 ### What is Yeoman?
