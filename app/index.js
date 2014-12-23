@@ -74,10 +74,7 @@ module.exports = yeoman.generators.Base.extend({
         this.push({
           'id': _.slugify(val),
           'src': val,
-          'pos': {'x' : x, 'y' : y, 'z' : 0},
-          'xdir': 'xdir',
-          'ydir': 'ydir',
-          'zdir': 'zdir'
+          'pos': {'x' : x, 'y' : y, 'z' : 0}
         });
 
         // if we're at our contraint
