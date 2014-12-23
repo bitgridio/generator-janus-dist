@@ -7,7 +7,7 @@
     <FireBoxRoom>
       <Assets>
         <% _.forEach(assetImages, function (image) {
-          %><AssetImage id="<%= image.id %>" src="<%= imageDirLoc + '/' + image.src %>" />
+          %><AssetImage id="<%= image.id %>" src="../<%= imageDirLoc + '/' + image.src %>" />
         <% }); %>
       </Assets>
       <Room use_local_asset="room_plane">
