@@ -36,6 +36,11 @@ module.exports = yeoman.generators.Base.extend({
       name: 'imageConstraint',
       message: 'How many items per row would you like? (typically 10 or 20)',
       default: 10
+    }, {
+      type: 'input',
+      name: 'docTitle',
+      message: 'HTML title for this page',
+      default: 'JanusDist'
     }];
 
     this.prompt(prompts, function (props) {
@@ -43,6 +48,7 @@ module.exports = yeoman.generators.Base.extend({
       // get the files in the directory
       this.imageDirLoc = props.imageDirLoc;
       this.imageConstraint = props.imageConstraint;
+      this.docTitle = props.docTitle;
 
       // we divide by 2 because we will start in the negative
       var c = this.imageConstraint/2,
@@ -89,7 +95,7 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_index.html'),
         this.destinationPath('public/index.html'),
         {
-          title: 'JanusDist',
+          title: this.docTitle,
           description: 'test description',
           assetImages: this.assetImages,
           imageDirLoc: this.imageDirLoc
