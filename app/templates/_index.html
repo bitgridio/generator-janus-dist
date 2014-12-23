@@ -10,7 +10,7 @@
           %><AssetImage id="<%= image.id %>" src="../<%= imageDirLoc + '/' + image.src %>" />
         <% }); %>
       </Assets>
-      <Room use_local_asset="room_plane">
+      <Room use_local_asset="room_plane" pos="0 0 10" xdir="-1.00 0.00 -0.00" ydir="0.00 1.00 0.00" zdir="0.00 0.00 -1.00">
         <% _.forEach(assetImages, function (image) {
           %><Image id="<%= image.id %>" pos="<%= image.pos.x %> <%= image.pos.y %> <%= image.pos.z %>" />
         <% }); %>

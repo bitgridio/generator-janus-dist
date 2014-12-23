@@ -57,7 +57,7 @@ module.exports = yeoman.generators.Base.extend({
       this.docHTML = props.docHTML;
 
       // we divide by 2 because we will start in the negative
-      var c = this.imageConstraint/2,
+      var c = this.imageConstraint,
         x = c * (-1),
         y = 1;
 
@@ -68,7 +68,7 @@ module.exports = yeoman.generators.Base.extend({
 
         if (idx !== 0) {
           // not the first one
-          x++;
+          x = x + 2;
         }
 
         this.push({
@@ -78,11 +78,11 @@ module.exports = yeoman.generators.Base.extend({
         });
 
         // if we're at our contraint
-        if (x === c) {
+        if (x >= c) {
           // reset x to -c+1 because x is incremented above
-          x = (c + 1) * (-1);
+          x = (c + 2) * (-1);
           // increment y
-          y++;
+          y = y + 2;
         }
 
       }, this.assetImages);
