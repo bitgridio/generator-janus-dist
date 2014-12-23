@@ -39,8 +39,13 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       type: 'input',
       name: 'docTitle',
-      message: 'HTML title for this page',
+      message: 'HTML title for this page:',
       default: 'JanusDist'
+    }, {
+      type: 'input',
+      name: 'docHTML',
+      message: 'HTML or text description for this page:',
+      default: '<p>Generated with <a href="https://github.com/sirkitree/generator-janus-dist">Janus asset distributor</a>.'
     }];
 
     this.prompt(prompts, function (props) {
@@ -49,6 +54,7 @@ module.exports = yeoman.generators.Base.extend({
       this.imageDirLoc = props.imageDirLoc;
       this.imageConstraint = props.imageConstraint;
       this.docTitle = props.docTitle;
+      this.docHTML = props.docHTML;
 
       // we divide by 2 because we will start in the negative
       var c = this.imageConstraint/2,
@@ -96,7 +102,7 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('public/index.html'),
         {
           title: this.docTitle,
-          description: 'test description',
+          description: this.docHTML,
           assetImages: this.assetImages,
           imageDirLoc: this.imageDirLoc
         }
