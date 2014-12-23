@@ -34,6 +34,8 @@ Finally, initiate the generator:
 yo janus-dist
 ```
 
+You can see a sample of what this generates in [the example repository for this module](https://github.com/sirkitree/test-janus-dist).
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
