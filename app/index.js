@@ -22,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the kickass' + chalk.red('JanusDist') + ' generator!'
+      'Welcome to the kickass ' + chalk.red('JanusDist') + ' generator!'
     ));
 
     // Prompt user for the directory, default to 'images'.
@@ -31,16 +31,23 @@ module.exports = yeoman.generators.Base.extend({
       name: 'imageDirLoc',
       message: 'Where do your images reside?',
       default: 'images'
+    }, {
+      type: 'input',
+      name: 'imageConstraint',
+      message: 'How many items per row would you like? (typically 10 or 20)',
+      default: 10
     }];
 
     this.prompt(prompts, function (props) {
 
       // get the files in the directory
       this.imageDirLoc = props.imageDirLoc;
+      this.imageConstraint = props.imageConstraint;
 
-        var c = 5,
-          x = c * (-1),
-          y = 1;
+      // we divide by 2 because we will start in the negative
+      var c = this.imageConstraint/2,
+        x = c * (-1),
+        y = 1;
 
       this.assetImages = [];
 
